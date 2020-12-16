@@ -1,0 +1,14 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+PermitRootLogin no
+PubkeyAuthentication yes
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+PrintMotd no
+AcceptEnv LANG LC_*
+
+Match User rogue
+	PubkeyAuthentication no
+	PasswordAuthentication yes
+	PermitEmptyPasswords yes

@@ -1,0 +1,27 @@
+# howto build & install dgamelaunch & NetHack
+# todo: do not clobber existing playground
+
+sudo rm -rf /opt/dgl
+cd ~/build/dgamelaunch
+make clean
+cd ../NetHack
+make spotless
+cd sys/unix
+sh setup.sh hints/floatingeye
+cd ../..
+make all
+cd ../dgamelaunch/
+./autogen.sh --enable-sqlite --enable-shmem --with-config-file=/opt/dgl/etc/dgamelaunch.conf
+make
+sudo ./dgl-create-chroot 
+cd ../NetHack/
+sudo make install
+cd /opt/dgl
+sudo chmod -R g-w ./
+sudo chown -R games:games nh370/
+
+--
+
+cd /etc/ssh
+sudo pico sshd_config
+sudo systemctl restart ssh

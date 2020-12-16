@@ -10,19 +10,19 @@
 
 
 # Same as chroot_path in dgl config file
-CHROOT="/opt/nethack/nethack.alt.org/"
+CHROOT="/opt/dgl/"
 # the user & group from dgamelaunch config file.
 USRGRP="games:games"
 # COMPRESS from include/config.h; the compression binary to copy. leave blank to skip.
 COMPRESSBIN="/bin/gzip"
 # nethack binary to copy into chroot (leave blank to skip)
-#NETHACKBIN="/home/paxed/hacking/coding/nethacksource/nethack-3.4.3-nao/nh343/nethack.343-nao"
+NETHACKBIN="/home/mlehotay/build/NetHack/src/nethack"
 # fixed data to copy (leave blank to skip)
 #NH_PLAYGROUND_FIXED="/home/paxed/hacking/coding/nethacksource/nethack-3.4.3-nao/nh343/"
 # HACKDIR from include/config.h; aka nethack subdir inside chroot
-NHSUBDIR="/nh343/"
+NHSUBDIR="/nh370/"
 # VAR_PLAYGROUND from include/unixconf.h
-NH_VAR_PLAYGROUND="/nh343/var/"
+NH_VAR_PLAYGROUND="/nh370/var/"
 
 # only define this if dgl was configured with --enable-sqlite
 SQLITE_DBFILE="/dgldir/dgamelaunch.db"
@@ -66,7 +66,7 @@ fi
 CHROOT="`echo ${CHROOT%/}`"
 
 set -e
-umask 022
+umask 002
 
 if [ -e "$CHROOT" ]; then
    errorexit "Chroot $CHROOT already exists."
@@ -90,10 +90,11 @@ mkdir dgldir etc lib mail usr bin
 chown "$USRGRP" dgldir mail
 cp "$CURDIR/dgamelaunch" "$DGLFILE"
 ln -s "$DGLFILE" dgamelaunch
+chmod 4755 dgamelaunch
 
-mkdir -p "$CHROOT/dgldir/inprogress-nh343"
+mkdir -p "$CHROOT/dgldir/inprogress-nh370"
 mkdir -p "$CHROOT/dgldir/userdata"
-chown "$USRGRP" "$CHROOT/dgldir/inprogress-nh343"
+chown "$USRGRP" "$CHROOT/dgldir/inprogress-nh370"
 chown "$USRGRP" "$CHROOT/dgldir/userdata"
 
 
@@ -138,6 +139,8 @@ cd bin
 cp "$CURDIR/ee" .
 cp "$CURDIR/virus" .
 echo "Copied text editors 'ee' and 'virus' to chroot."
+LIBS="$LIBS `findlibs $CURDIR/ee`"
+LIBS="$LIBS `findlibs $CURDIR/virus`"
 cd ..
 
 
@@ -145,8 +148,8 @@ cp "$CURDIR/examples/dgl_menu_main_anon.txt" .
 cp "$CURDIR/examples/dgl_menu_main_user.txt" .
 cp "$CURDIR/examples/dgl_menu_watchmenu_help.txt" .
 cp "$CURDIR/examples/dgl-banner" .
-cp "$CURDIR/dgl-default-rcfile" "dgl-default-rcfile.nh343"
-chmod go+r dgl_menu_main_anon.txt dgl_menu_main_user.txt dgl-banner dgl-default-rcfile.nh343
+cp "$CURDIR/dgl-default-rcfile" "dgl-default-rcfile.nh370"
+chmod go+r dgl_menu_main_anon.txt dgl_menu_main_user.txt dgl-banner dgl-default-rcfile.nh370
 
 NHSUBDIR="`echo ${NHSUBDIR%/}`"
 NHSUBDIR="`echo ${NHSUBDIR#/}`"
