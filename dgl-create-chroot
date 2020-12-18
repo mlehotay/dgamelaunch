@@ -86,7 +86,7 @@ LIBS="`findlibs dgamelaunch`"
 
 mkdir -p "$CHROOT" || errorexit "Cannot create chroot"
 cd "$CHROOT"
-mkdir dgldir etc lib mail usr bin
+mkdir dgldir etc lib mail usr bin usr/bin
 chown "$USRGRP" dgldir mail
 cp "$CURDIR/dgamelaunch" "$DGLFILE"
 ln -s "$DGLFILE" dgamelaunch
