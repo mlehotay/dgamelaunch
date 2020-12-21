@@ -66,7 +66,7 @@ fi
 CHROOT="`echo ${CHROOT%/}`"
 
 set -e
-umask 002
+umask 022
 
 if [ -e "$CHROOT" ]; then
    errorexit "Chroot $CHROOT already exists."
@@ -225,5 +225,3 @@ done
 
 
 echo "Finished."
-
-

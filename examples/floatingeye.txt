@@ -1,4 +1,5 @@
-# howto build & install dgamelaunch & NetHack
+# howto build & install dgamelaunch & NetHack on illithid
+# also see https://github.com/mlehotay/NetHack/blob/NetHack-3.7/sys/unix/Install.avocado
 # todo: do not clobber existing playground
 
 sudo rm -rf /opt/dgl
@@ -13,11 +14,11 @@ make all
 cd ../dgamelaunch/
 ./autogen.sh --enable-sqlite --enable-shmem --with-config-file=/opt/dgl/etc/dgamelaunch.conf
 make
-sudo ./dgl-create-chroot 
+sudo ./dgl-create-chroot
 cd ../NetHack/
 sudo make install
 cd /opt/dgl
-sudo chmod -R g-w ./
+#sudo chmod -R g-w ./
 sudo chown -R games:games nh370/
 
 --
