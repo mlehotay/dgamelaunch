@@ -1,11 +1,14 @@
 # howto build & install dgamelaunch & NetHack on illithid
 # also see https://github.com/mlehotay/NetHack/blob/NetHack-3.7/sys/unix/Install.avocado
-# todo: do not clobber existing playground
 
+cd /opt/dgl
+sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
 sudo rm -rf /opt/dgl
 cd ~/build/dgamelaunch
+git pull
 make clean
 cd ../NetHack
+git pull
 make spotless
 cd sys/unix
 sh setup.sh hints/floatingeye
@@ -18,11 +21,25 @@ sudo ./dgl-create-chroot
 cd ../NetHack/
 sudo make install
 cd /opt/dgl
-#sudo chmod -R g-w ./
 sudo chown -R games:games nh370/
+sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
+sudo chroot ./ nh370/nethack # test if can play games as root
+ssh rogue@illithid.floatingeye.net
 
 --
 
 cd /etc/ssh
 sudo pico sshd_config
 sudo systemctl restart ssh
+
+--
+# backup data
+# need sudo for now because of permisssions on NH playground files
+# plan to fix perms so backup doesn't need sudo
+cd /opt/dgl
+sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
+--
+# restore data
+cd /opt/dgl
+sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
+--
