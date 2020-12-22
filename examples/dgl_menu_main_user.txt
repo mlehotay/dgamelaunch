@@ -13,7 +13,6 @@
  w) Watch games in progress
  o) Edit options
  p) Play NetHack 3.7.0
- f) Play What Fools These Mortals 1.0
  q) Quit
 
  =>
