@@ -1,0 +1,27 @@
+fix building dgl on avocado, update avocado.txt
+set up local test environment for dgl, update avocado.txt
+configure dgl mail for nethack
+configure dgl extra info files for nethack
+replace vi & ee with rnano
+update dgl menus & banners
+add server info to dgl menu
+add MOTD/news to dgl menu
+listen for ssh connections at floatingeye.net (top level domain)
+run dgl stress tests
+configure automated backups
+make xlogfiles public for scraping
+create floatingeye web page with scoreboards, hterm, etc
+figure out nethack recovery process, write instructions
+--
+create nethack news file
+configure dumplogs
+create default nethackrc for dgl
+test panic logging
+add curses window port
+--
+get python interpreter running in chroot
+add WFTM to dgl menu
+--
+fix rogue clone iv linux builds
+add rogue to dgl menu
+add xlogfiles to rogue
