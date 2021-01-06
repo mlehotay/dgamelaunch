@@ -1,19 +1,35 @@
-# This is an example nethackrc file. You should edit this to suit the needs
-# of your personal nethack build and add some reasonable default options
-# for your users.
-
-# If you compiled dgamelaunch with the `vi' editor enabled instead of ee,
-# perhaps a helpful blurb such as this might help:
+# This is an example nethackrc file.
+# You can edit it to set your default options.
 
 # This editor is vi-like. Type ESC a couple times, then ':q!' (without quotes)
 # to exit if you get stuck. To save, hit ESC and then ZZ or type ':wq'
 # (without quotes.) To insert text, hit 'i' to enter insert mode.
 
-# Here are some examples of reasonable defaults:
-
-OPTIONS=showexp,showscore,time,color,!autopickup
-OPTIONS=autodig,fruit:slime mold,boulder:0
-
 # For more information on what you can set in your nethackrc file, refer to:
-#   http://www.nethack.org/v343/Guidebook.html#_TOCentry_42
+#   http://www.nethack.org/v366/Guidebook.html#toc_9.2
 # Happy hacking!
+
+OPTIONS=color,hilite_pet,!autopickup
+OPTIONS=time,showrace,boulder:0,fruit:potato
+
+OPTIONS=menucolors
+MENUCOLOR="(rusty|burnt|rotted|corroded)"=brown
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" cursed "=red
+
+OPTIONS=statushilites:10
+OPTIONS=hilite_status:hitpoints/100%/lightgreen
+OPTIONS=hilite_status:hitpoints/<100%/green
+OPTIONS=hilite_status:hitpoints/<80%/yellow
+OPTIONS=hilite_status:hitpoints/<60%/brown
+OPTIONS=hilite_status:hitpoints/<40%/orange
+OPTIONS=hilite_status:hitpoints/<20%/red&inverse
+OPTIONS=hilite_status:hitpoints-max/up/lightgreen/down/orange
+
+OPTIONS=hilite_status:power/100%/lightblue
+OPTIONS=hilite_status:power/<100%/blue
+OPTIONS=hilite_status:power/<80%/green
+OPTIONS=hilite_status:power/<60%/yellow
+OPTIONS=hilite_status:power/<40%/orange
+OPTIONS=hilite_status:power/<20%/red
+OPTIONS=hilite_status:power-max/up/lightblue/down/orange
