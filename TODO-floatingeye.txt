@@ -1,8 +1,6 @@
 # dgamelaunch
 fix building dgl on avocado, update avocado.txt
 set up local test environment for dgl, update avocado.txt
-configure dgl mail for nethack
-configure dgl extra info files for nethack
 add server info to dgl menu
 add MOTD/news to dgl menu
 update dgl menus & banners
