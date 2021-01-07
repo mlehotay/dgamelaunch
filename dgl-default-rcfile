@@ -9,6 +9,8 @@
 #   http://www.nethack.org/v366/Guidebook.html#toc_9.2
 # Happy hacking!
 
+#OPTIONS=windowtype:curses
+#OPTIONS=role:random,race:orc,gender:random,align:chaotic
 OPTIONS=color,hilite_pet,!autopickup
 OPTIONS=time,showrace,boulder:0,fruit:potato
 
