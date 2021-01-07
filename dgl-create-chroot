@@ -93,10 +93,11 @@ ln -s "$DGLFILE" dgamelaunch
 chmod 4755 dgamelaunch
 
 mkdir -p "$CHROOT/dgldir/inprogress-nh370"
+mkdir -p "$CHROOT/dgldir/extrainfo-nh370"
 mkdir -p "$CHROOT/dgldir/userdata"
 chown "$USRGRP" "$CHROOT/dgldir/inprogress-nh370"
+chown "$USRGRP" "$CHROOT/dgldir/extrainfo-nh370"
 chown "$USRGRP" "$CHROOT/dgldir/userdata"
-
 
 if [ -n "$SQLITE_DBFILE" ]; then
   if [ "x`which sqlite3`" = "x" ]; then
