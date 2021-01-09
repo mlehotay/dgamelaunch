@@ -12,8 +12,6 @@ make xlogfiles, dumplogs, etc public for scraping
 create floatingeye web page with scoreboards, hterm, etc
 
 # nethack
-test panic logging
-figure out recovery process, write instructions
 allow longer playernames
 add consent patch
 

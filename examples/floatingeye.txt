@@ -47,3 +47,13 @@ sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
 # restore data
 cd /opt/dgl
 sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
+--
+# recover game for player after crash
+# TODO - this doesn't work - player still gets dgl warning about stale process
+cd /opt/dgl/nh370
+sudo ./recover -d var 5spleen
+sudo chown -R games:games var/save/5spleen
+--
+# restore savefile from backup
+cd /opt/dgl/nh370/var/save
+sudo cp -p 5spleen.gz.bak 5spleen.gz
