@@ -36,7 +36,7 @@ sudo pico sshd_config
 sudo systemctl restart ssh
 --
 # set timezone
-sudo timedatectl set-timezone America/New_York
+sudo timedatectl set-timezone America/Toronto
 --
 # backup data
 # need sudo for now because of permisssions on NH playground files

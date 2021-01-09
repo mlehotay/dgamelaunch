@@ -4,9 +4,7 @@ set up local test environment for dgl, update avocado.txt
 add server info to dgl menu
 add MOTD/news to dgl menu
 update dgl menus & banners
-fix compiler warnings
 replace vi & ee with rnano
-change time zone on illithid to EST
 listen for ssh connections at floatingeye.net (top level domain)
 run dgl stress tests
 configure automated backups
@@ -16,9 +14,7 @@ create floatingeye web page with scoreboards, hterm, etc
 # nethack
 test panic logging
 figure out recovery process, write instructions
-build man pages
-fix compiler warnings
-"The number_pad option may not both have a value and be negated."
+allow longer playernames
 add consent patch
 
 # wftm
