@@ -12,7 +12,6 @@ make xlogfiles, dumplogs, etc public for scraping
 create floatingeye web page with scoreboards, hterm, etc
 
 # nethack
-allow longer playernames
 add consent patch
 
 # wftm
