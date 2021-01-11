@@ -1,37 +1,24 @@
-# howto build & install dgamelaunch & NetHack on dev/test system
-# currently does not work locally (still runs okay on server)
+# howto build & install dgamelaunch & NetHack on avocado (dev/test system)
+# also see https://github.com/mlehotay/dgamelaunch/blob/master/examples/floatingeye.txt
 
 sudo rm -rf /opt/dgl
-cd ~/sandbox/dgamelaunch
-make clean
-cd ../nethack/NetHack
+cd ~/sandbox/nethack
 make spotless
 cd sys/unix
-sh setup.sh hints/avocado-chroot
+sh setup.sh hints/floatingeye
 cd ../..
 make all
-cd ../../dgamelaunch/
+cd ~/sandbox/dgamelaunch
+make clean
 ./autogen.sh --enable-sqlite --enable-shmem --with-config-file=/opt/dgl/etc/dgamelaunch.conf
 make
+#ln -s sandbox ../../build
 sudo ./dgl-create-chroot
-cd ../nethack/NetHack/
+cd ../nethack/
 sudo make install
 cd /opt/dgl
 sudo chown -R games:games nh370/
 sudo chmod 4755 ./dgamelaunch
---
-cd /opt/dgl
-sudo /home/mlehotay/sandbox/nethack/NetHack/sys/unix/mkchroot.sh
-ldd ./dgamelaunch
-sudo cp -LR /lib/x86_64-linux-gnu/libncursesw.so.5 lib/x86_64-linux-gnu/
-sudo cp -LR /lib/x86_64-linux-gnu/libpthread.so.0 lib/x86_64-linux-gnu/
-sudo cp -LR /lib/x86_64-linux-gnu/libcrypt.so.1 lib/x86_64-linux-gnu/
-sudo cp -LR /usr/lib/x86_64-linux-gnu/libsqlite3.so.0 lib/x86_64-linux-gnu/
-sudo cp -LR /usr/lib/x86_64-linux-gnu/libfl.so.2 usr/lib/x86_64-linux-gnu/
---
-sudo chroot ./ nh370/nethack # works okay, can play games as root
-sudo chroot ./ ./dgamelaunch # ERROR, see below
 
-######
-(base) mlehotay@avocado:/opt/dgl$ sudo chroot ./ ./dgamelaunch
-ERROR: can't find or open /opt/dgl/etc/dgamelaunch.conf for reading
+sudo chroot ./ nh370/nethack # test if can play games as root
+./dgamelaunch

@@ -1,5 +1,5 @@
-# howto build & deploy dgamelaunch & NetHack on illithid
-# also see https://github.com/mlehotay/NetHack/blob/NetHack-3.7/sys/unix/Install.avocado
+# howto build & deploy dgamelaunch & NetHack on illithid (dgl server)
+# also see https://github.com/mlehotay/dgamelaunch/blob/master/examples/avocado.txt
 
 cd ~/build
 git clone https://github.com/mlehotay/NetHack.git nethack
