@@ -30,6 +30,11 @@ sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
 sudo chroot ./ nh370/nethack # test if can play games as root
 ssh rogue@illithid.floatingeye.net
 --
+# create player account
+sudo adduser nethack
+sudo passwd --delete nethack
+sudo chsh -s /opt/dgl/dgamelaunch nethack
+--
 # configure ssh
 cd /etc/ssh
 sudo pico sshd_config

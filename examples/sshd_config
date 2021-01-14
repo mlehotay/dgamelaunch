@@ -8,7 +8,7 @@ UsePAM yes
 PrintMotd no
 AcceptEnv LANG LC_*
 
-Match User rogue
+Match User rogue,nethack
 	PubkeyAuthentication no
 	PasswordAuthentication yes
 	PermitEmptyPasswords yes

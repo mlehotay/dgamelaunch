@@ -1,7 +1,6 @@
 # dgamelaunch
 add server info to dgl menu
 add MOTD/news to dgl menu
-add ssh username nethack
 enable https
 run dgl stress tests
 configure automated backups
