@@ -1,13 +1,15 @@
-# dgamelaunch
-add server info to dgl menu
-add MOTD/news to dgl menu
+# illithid
 enable https
-run dgl stress tests
 configure automated backups
-replace vi & ee with rnano
 create static server webpage
 make xlogfiles, dumplogs, etc public for scraping
 update web page with scoreboards, hterm, etc
+
+# dgamelaunch
+add server info to dgl menu
+add MOTD/news to dgl menu
+run dgl stress tests
+replace vi & ee with rnano
 
 # nethack
 add consent patch

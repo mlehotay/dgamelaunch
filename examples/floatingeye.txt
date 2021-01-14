@@ -29,6 +29,7 @@ sudo chown -R games:games nh370/
 sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
 sudo chroot ./ nh370/nethack # test if can play games as root
 ssh rogue@illithid.floatingeye.net
+ssh nethack@floatingeye.net
 --
 # create player account
 sudo adduser nethack
