@@ -1,13 +1,14 @@
 # dgamelaunch
 add server info to dgl menu
 add MOTD/news to dgl menu
-update dgl menus & banners
-replace vi & ee with rnano
-listen for ssh connections at floatingeye.net (top level domain)
+add ssh username nethack
+enable https
 run dgl stress tests
 configure automated backups
+replace vi & ee with rnano
+create static server webpage
 make xlogfiles, dumplogs, etc public for scraping
-create floatingeye web page with scoreboards, hterm, etc
+update web page with scoreboards, hterm, etc
 
 # nethack
 add consent patch

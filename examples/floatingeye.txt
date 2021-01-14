@@ -57,3 +57,12 @@ sudo chown -R games:games var/save/5spleen
 # restore savefile from backup
 cd /opt/dgl/nh370/var/save
 sudo cp -p 5spleen.gz.bak 5spleen.gz
+--
+# configure apache
+cd /etc/apache2/sites-available
+sudo pico floatingeye.conf
+sudo a2ensite floatingeye.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+--
