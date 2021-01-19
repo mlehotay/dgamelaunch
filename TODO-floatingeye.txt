@@ -12,7 +12,16 @@ run dgl stress tests
 replace vi & ee with rnano
 
 # nethack
-add consent patch
+re-implement clobbered commits from jan 7-19 (d'oh!):
+    update Install.avocado
+    mkchroot.sh should read nh binary path from command line
+    allow longer playernames
+    build man pages
+    fix compiler warnings
+    "The number_pad option may not both have a value and be negated."
+    increase PERSMAX to 25
+add ifdefs for consent patch
+create consent branch off Nethack-3.7 for pull request
 
 # wftm
 get python interpreter running in chroot
