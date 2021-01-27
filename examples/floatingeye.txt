@@ -7,7 +7,7 @@ git clone https://github.com/mlehotay/dgamelaunch.git
 --
 cd /opt/dgl
 sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
-sudo rm -rf /opt/dgl
+#sudo rm -rf /opt/dgl
 cd ~/build/nethack
 git pull
 make spotless
@@ -23,11 +23,15 @@ make clean
 make
 sudo ./dgl-create-chroot
 cd ../nethack/
-sudo make install
+#sudo make install
+sudo make update
+sudo cp doc/news /opt/dgl/nh370
 cd /opt/dgl
 sudo chown -R games:games nh370/
 sudo tar -xzf ~/backup/illithid.yyyy-mm-dd.tar.gz
-sudo chroot ./ nh370/nethack # test if can play games as root
+--
+# test deployment
+sudo chroot ./ nh370/nethack
 ssh rogue@illithid.floatingeye.net
 ssh nethack@floatingeye.net
 --
