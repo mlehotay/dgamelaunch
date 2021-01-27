@@ -14,6 +14,9 @@ replace vi & ee with rnano
 # nethack
 test consent patch
 add tty tile escape code, score_on_botl options
+save bones files for bonegraft
+try out the game of life option
+improve deployment workflow
 
 # wftm
 get python interpreter running in chroot
