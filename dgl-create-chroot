@@ -198,9 +198,11 @@ touch "$CHROOT/$NH_VAR_PLAYGROUND/perm"
 touch "$CHROOT/$NH_VAR_PLAYGROUND/record"
 touch "$CHROOT/$NH_VAR_PLAYGROUND/xlogfile"
 
+mkdir -p "$CHROOT/bones"
+chown -R "$USRGRP" "$CHROOT/bones"
+
 chown -R "$USRGRP" "$CHROOT/$NHSUBDIR"
 chown -R "$USRGRP" "$CHROOT/$NH_VAR_PLAYGROUND"
-
 
 
 # Curses junk

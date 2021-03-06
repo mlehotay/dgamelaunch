@@ -1,5 +1,6 @@
 # illithid
 enable https
+enable sftp
 configure automated backups
 create static server webpage
 make record, xlogfiles, userdata, etc public for scraping
@@ -12,10 +13,10 @@ run dgl stress tests
 replace vi & ee with rnano
 
 # nethack
-test consent patch
+fix consent patch
 add tty tile escape code, score_on_botl options
+copy sysconf during make install
 save bones files for bonegraft
-try out the game of life option
 improve deployment workflow
 
 # wftm

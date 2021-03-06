@@ -16,6 +16,8 @@ make
 sudo ./dgl-create-chroot
 cd ../nethack/
 sudo make install
+sudo cp ../dgamelaunch/examples/reap.sh /opt/dgl/nh370/
+sudo chmod +x /opt/dgl/nh370/reap.sh
 cd /opt/dgl
 sudo chown -R games:games nh370/
 sudo chmod 4755 ./dgamelaunch

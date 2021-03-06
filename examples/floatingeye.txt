@@ -6,7 +6,7 @@ git clone https://github.com/mlehotay/NetHack.git nethack
 git clone https://github.com/mlehotay/dgamelaunch.git
 --
 cd /opt/dgl
-sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
+sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/ bones/
 #sudo rm -rf /opt/dgl
 cd ~/build/nethack
 git pull
@@ -52,7 +52,7 @@ sudo timedatectl set-timezone America/Toronto
 # need sudo for now because of permisssions on NH playground files
 # plan to fix perms so backup doesn't need sudo
 cd /opt/dgl
-sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/
+sudo tar -czf ~/backup/illithid.yyyy-mm-dd.tar.gz dgldir/ mail/ nh370/var/ bones/
 --
 # restore data
 cd /opt/dgl
