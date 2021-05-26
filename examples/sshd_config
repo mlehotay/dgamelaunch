@@ -12,3 +12,4 @@ Match User rogue,nethack
 	PubkeyAuthentication no
 	PasswordAuthentication yes
 	PermitEmptyPasswords yes
+	DisableForwarding yes

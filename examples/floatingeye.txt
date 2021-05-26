@@ -39,6 +39,7 @@ ssh nethack@floatingeye.net
 sudo adduser nethack
 sudo passwd --delete nethack
 sudo chsh -s /opt/dgl/dgamelaunch nethack
+sudo touch /home/nethack/.hushlogin
 --
 # configure ssh
 cd /etc/ssh
